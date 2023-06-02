@@ -1,7 +1,8 @@
 "use strict";
 const { Model } = require("sequelize");
+const { uuidType } = require("../helpers");
 module.exports = (sequelize, DataTypes) => {
-  class UserRole extends Model {
+  class DetailTransaksi extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,16 +12,18 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  UserRole.init(
+  DetailTransaksi.init(
     {
-      name: DataTypes.STRING,
-      userId: DataTypes.INTEGER,
-      roleId: DataTypes.INTEGER,
+      id: uuidType(DataTypes),
+      transaksiId: DataTypes.UUID,
+      orderId: DataTypes.UUID,
+      qty: DataTypes.INTEGER,
+      subTotal: DataTypes.INTEGER,
     },
     {
       sequelize,
-      modelName: "UserRole",
+      modelName: "DetailTransaksi",
     }
   );
-  return UserRole;
+  return DetailTransaksi;
 };

@@ -1,7 +1,6 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
+const { uuidType } = require("../helpers");
 module.exports = (sequelize, DataTypes) => {
   class PriceList extends Model {
     /**
@@ -13,13 +12,18 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  PriceList.init({
-    namaPake: DataTypes.STRING,
-    beratGram: DataTypes.INTEGER,
-    beratKiloGram: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'PriceList',
-  });
+  PriceList.init(
+    {
+      id: uuidType(DataTypes),
+      namaPaket: DataTypes.STRING,
+      beratGram: DataTypes.INTEGER,
+      beratKiloGram: DataTypes.INTEGER,
+      harga: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: "PriceList",
+    }
+  );
   return PriceList;
 };

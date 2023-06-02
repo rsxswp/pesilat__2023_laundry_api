@@ -36,7 +36,7 @@ app.use((req, res, next) => {
   next();
 });
 
-require("./routes")(app);
+require("./routes/api.route")(app);
 
 db.sequelize.sync().then(() => {
   // create_roles();

@@ -10,15 +10,18 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       userId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
         references: {
           model: {
             tableName: "Users",
           },
           key: "id",
         },
+        allowNull: false,
+        onDelete: "CASCADE",
       },
       roleId: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: {
@@ -26,6 +29,7 @@ module.exports = {
           },
           key: "id",
         },
+        onDelete: "CASCADE",
       },
       createdAt: {
         allowNull: false,

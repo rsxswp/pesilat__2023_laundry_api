@@ -1,21 +1,23 @@
 "use strict";
+
+const { uuidType } = require("../helpers");
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("PriceLists", {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER,
-      },
-      namaPake: {
+      id: uuidType(Sequelize),
+      namaPaket: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       beratGram: {
         type: Sequelize.INTEGER,
       },
       beratKiloGram: {
+        type: Sequelize.INTEGER,
+      },
+      harga: {
         type: Sequelize.INTEGER,
       },
       createdAt: {

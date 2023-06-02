@@ -5,28 +5,30 @@ const { uuidType } = require("../helpers");
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Customers", {
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
+    await queryInterface.createTable("DetailTransaksis", {
       id: uuidType(Sequelize),
-      alamat: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      noTelp: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      userId: {
+      transaksiId: {
         type: Sequelize.UUID,
         references: {
-          model: "Users",
+          model: "Transaksis",
           key: "id",
         },
-        allowNull: true, // karna customer bisa di inputkan oleh admin / karyawan
+        onDelete: "CASCADE",
         onUpdate: "CASCADE",
+      },
+      orderId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "PriceLists",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+      },
+      qty: {
+        type: Sequelize.INTEGER,
+      },
+      subTotal: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
@@ -39,6 +41,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Customers");
+    await queryInterface.dropTable("DetailTransaksis");
   },
 };
