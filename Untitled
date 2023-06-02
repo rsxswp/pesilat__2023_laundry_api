@@ -1,0 +1,7 @@
+sistem laundry aplikasi :
+
+- mempunyai beberapa layanan, contoh :
+	- di setrika, anter ke rumah, menggunakan pengharum berkualitas
+- laundry 1 kilo akan dikenakan biaya 10rb
+
+ada tabel detail transaksi karena customer bisa memilih layanan. layanan dan berat laundry akan tercatat di detail transaksi
