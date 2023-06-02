@@ -1,6 +1,6 @@
 module.exports = (app) => {
   app.post("/", async (req, res) => {
-    return res.send("admin");
+    return res.send("ini admin");
   });
   return app;
 };

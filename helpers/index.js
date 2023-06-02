@@ -1,7 +1,7 @@
 const uuidType = require("./uuidType.helper");
-const addRouteApi = require("./addRouteApi.helper");
+const addRoutesApi = require("./addRoutesApi.helper");
 
 module.exports = {
   uuidType,
-  addRouteApi,
+  addRoutesApi,
 };

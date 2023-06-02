@@ -1,7 +1,12 @@
-const { addRouteApi } = require("../helpers");
+const { addRoutesApi } = require("../helpers");
 
 module.exports = (app) => {
-  const customer = addRouteApi("/customer", require("./customer.route"), app);
-  const transaksi = customer("/transaksi", require("./admin.route"));
-  const detailtransaksi = transaksi("/detail", require("./karyawan.route"));
+  addRoutesApi("/customer", require("./customer.route"), app).group(
+    (customer) =>
+      customer
+        .addRoutesApi("/admin", require("./admin.route"))
+        .group((admin) =>
+          admin.addRoutesApi("/karyawan", require("./karyawan.route"))
+        )
+  );
 };
