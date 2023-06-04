@@ -18,6 +18,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       harga: {
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
       createdAt: {

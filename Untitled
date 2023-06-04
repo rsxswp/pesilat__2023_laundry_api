@@ -5,3 +5,7 @@ sistem laundry aplikasi :
 - laundry 1 kilo akan dikenakan biaya 10rb
 
 ada tabel detail transaksi karena customer bisa memilih layanan. layanan dan berat laundry akan tercatat di detail transaksi
+user bisa dan tidak login. login dibutukan ketika dia ingin mendapatkan infromasi apakah laundry sudah selesai atau belum
+
+- ketika admin menambahkan customer, akan dibuatkan akun baru menggunakan default password atau menggunakan password yang diatur sendiri
+- requset body nya samain dengan field kolomnya 
