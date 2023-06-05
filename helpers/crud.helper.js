@@ -1,4 +1,5 @@
-const response = require("./response.helper");
+const { sequelize } = require("../models");
+const { response } = require("./response.helper");
 const validator = require("./validator.helper");
 
 module.exports = {
@@ -9,6 +10,7 @@ module.exports = {
       const validasi = validator(body, validateSchema);
 
       if (validasi.gagal()) {
+        // sequelize.rollback();
         return response(res, 422, {
           errors: validasi.erorrMessages(),
           message: "validation failed",
@@ -16,6 +18,8 @@ module.exports = {
       }
 
       const insertData = await model.create(body);
+
+      // await req.transaction.commit();
 
       if (insertData) {
         return response(res, 201, {
@@ -26,6 +30,9 @@ module.exports = {
         return response(res, 500, { errors: "insert failed" });
       }
     } catch (e) {
+      console.log(">>> err di curd (store) = ", e);
+      // await req.transaction.rollback();
+      throw e;
       return response(res, 500, {
         message: "500 internal server error",
         errors: e,

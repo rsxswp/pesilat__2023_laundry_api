@@ -15,10 +15,11 @@ module.exports = (sequelize, DataTypes) => {
   Customer.init(
     {
       id: uuidType(DataTypes),
-      name: DataTypes.STRING,
+      namaLengkap: DataTypes.STRING,
       alamat: DataTypes.TEXT,
       noTelp: DataTypes.STRING,
-      userId: DataTypes.UUID,
+      adminId: DataTypes.UUID,
+      customerId: DataTypes.UUID,
     },
     {
       sequelize,

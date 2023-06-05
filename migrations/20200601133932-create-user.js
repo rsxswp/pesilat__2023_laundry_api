@@ -1,6 +1,6 @@
 "use strict";
 
-const { uuidType } = require("../helpers");
+const { uuidType } = require("./../helpers");
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {

@@ -6,7 +6,7 @@ const { uuidType } = require("../helpers");
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Customers", {
-      name: {
+      namaLengkap: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -19,7 +19,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      userId: {
+      adminId: {
         type: Sequelize.UUID,
         references: {
           model: "Users",
@@ -27,6 +27,16 @@ module.exports = {
         },
         allowNull: true, // karna customer bisa di inputkan oleh admin / karyawan
         onUpdate: "CASCADE",
+      },
+      customerId: {
+        type: Sequelize.UUID,
+        references: {
+          model: "Users",
+          key: "id",
+        },
+        allowNull: false, // karna customer bisa di inputkan oleh admin / karyawan
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       createdAt: {
         allowNull: false,

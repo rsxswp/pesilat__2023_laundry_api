@@ -2,6 +2,7 @@ const configApp = require("../config/configApp");
 const { response } = require("../helpers");
 const jwt = require("jsonwebtoken");
 const { User } = require("./../models");
+const db = require("./../models");
 
 class LoginMiddleware {
   async isTrue(req, res, next) {
@@ -28,7 +29,7 @@ class LoginMiddleware {
         return response(res, 422, { errors: "no token provided" });
       }
 
-      jwt.verify(token, configApp.jwtSecret, (err, decoded) => {
+      jwt.verify(token, configApp.jwtSecret, async (err, decoded) => {
         if (err) {
           return response(res, 401, {
             message: "token is invalid",
@@ -36,6 +37,7 @@ class LoginMiddleware {
           });
         }
         req.userId = decoded.id;
+        // req.transaction = await db.sequelize.transaction();
         req.user = async () => {
           const user = await User.findOne({
             where: {

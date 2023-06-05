@@ -20,4 +20,18 @@ const response = (
   }
 };
 
-module.exports = response;
+const responseObject = (
+  res,
+  statusCode,
+  { message = null, data = null, errors = null }
+) => {
+  return {
+    statusBoolean: !errors ? true : false,
+    statusCode,
+    message,
+    data,
+    errors,
+  };
+};
+
+module.exports = { responseObject, response };

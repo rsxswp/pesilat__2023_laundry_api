@@ -7,5 +7,11 @@ module.exports = (app) => {
   // admin
   addRoutesApi("/admin", null, app).group((admin) => {
     admin.addRoutesApi("/price-list", require("./admin/priceList.route"));
+    admin.addRoutesApi("/customer", require("./customer/customer.route"), {
+      argumenRouter: {
+        admin: true,
+        isLogin: true,
+      },
+    });
   });
 };

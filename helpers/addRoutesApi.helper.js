@@ -1,11 +1,14 @@
 const express = require("express");
 
-const addRoutesApi = (prefixPath, routePath, app) => {
+const addRoutesApi = (prefixPath, routePath, app, argumenRouter = {}) => {
   const prefixCustomer = express.Router();
   const router = express.Router();
 
   if (routePath) {
-    const routeTarget = routePath(router);
+    const routeTarget =
+      argumenRouter === {}
+        ? routePath(router)
+        : routePath(router, argumenRouter);
     prefixCustomer.use(prefixPath, routeTarget);
   } else {
     prefixCustomer.use(prefixPath, (req, res, next) => {
@@ -18,8 +21,14 @@ const addRoutesApi = (prefixPath, routePath, app) => {
   return {
     group: (callback) => {
       callback({
-        addRoutesApi: (nextPath, nextRoutePath) =>
-          addRoutesApi(prefixPath + nextPath, nextRoutePath, app),
+        addRoutesApi: (nextPath, nextRoutePath, nextRouterArgumens) => {
+          addRoutesApi(
+            prefixPath + nextPath,
+            nextRoutePath,
+            app,
+            nextRouterArgumens
+          );
+        },
       });
     },
   };

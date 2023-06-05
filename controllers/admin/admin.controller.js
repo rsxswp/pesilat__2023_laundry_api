@@ -24,8 +24,11 @@ class AdminController {
 
   customer() {
     return {
-      store: (req, res) => {
-        return customerController.store(req, res);
+      storeOnlyCustomer: (req, res) => {
+        return customerController.storeOnlyCustomer(req, res);
+      },
+      storeWithUser: (req, res) => {
+        return customerController.storeWithUser(req, res);
       },
       update: async (req, res) => {
         return customerController.update(req, res);
