@@ -1,35 +1,40 @@
 "use strict";
 
-const { uuidType } = require("../helpers");
-
 /** @type {import('sequelize-cli').Migration} */
 // const {uuidType} = req
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Transaksis", {
-      id: uuidType(Sequelize),
+      id: {
+        allowNull: false,
+        primaryKey: true,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+      },
       kurirId: {
         type: Sequelize.UUID,
         references: {
           model: "Users",
           key: "id",
         },
+        allowNull: true,
       },
       customerId: {
-        type: Sequelize.UUID,
-        references: {
-          model: "Customers",
-          key: "id",
-        },
-        allowNull: false,
-      },
-      karyawanId: {
         type: Sequelize.UUID,
         references: {
           model: "Users",
           key: "id",
         },
         allowNull: false,
+      },
+      karyawanId: {
+        allowNull: true,
+        type: Sequelize.UUID,
+        references: {
+          model: "Users",
+          key: "id",
+        },
+        allowNull: true,
       },
       status: {
         type: Sequelize.ENUM(
@@ -43,6 +48,7 @@ module.exports = {
       },
       waktuSelesai: {
         type: Sequelize.DATE,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,

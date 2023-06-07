@@ -14,4 +14,8 @@ module.exports = (app) => {
       },
     });
   });
+
+  addRoutesApi("/customer", null, app).group((customer) => {
+    customer.addRoutesApi("/transaksi", require("./customer/transaksi.route"));
+  });
 };

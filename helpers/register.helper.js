@@ -6,7 +6,7 @@ const db = require("../models");
 
 const response = responseObject;
 
-const register = async (req, res, roles = ["CUSTOMER"], { model }) => {
+const register = async (req, res, roles, { model }) => {
   try {
     const [User, Role] = model;
     const dataRegister = {

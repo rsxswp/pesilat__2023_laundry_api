@@ -1,7 +1,5 @@
 "use strict";
 
-const { uuidType } = require("../helpers");
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -10,7 +8,12 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      id: uuidType(Sequelize),
+      id: {
+        allowNull: false,
+        primaryKey: true,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+      },
       alamat: {
         type: Sequelize.TEXT,
         allowNull: false,
@@ -34,7 +37,7 @@ module.exports = {
           model: "Users",
           key: "id",
         },
-        allowNull: false, // karna customer bisa di inputkan oleh admin / karyawan
+        allowNull: true,
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },

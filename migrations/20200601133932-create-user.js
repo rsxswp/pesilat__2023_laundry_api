@@ -1,12 +1,17 @@
 "use strict";
 
-const { uuidType } = require("./../helpers");
+// const { uuidType } = require("./../helpers");
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Users", {
-      id: uuidType(Sequelize),
+      id: {
+        allowNull: false,
+        primaryKey: true,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+      },
       namaLengkap: {
         type: Sequelize.STRING,
         allowNull: false,

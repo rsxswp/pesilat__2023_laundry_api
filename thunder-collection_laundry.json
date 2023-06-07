@@ -1,0 +1,626 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "laundry",
+    "dateExported": "2023-06-07T15:54:39.670Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "a5fbe4b3-67d8-475b-a2d3-477212994ff1",
+            "name": "auth",
+            "containerId": "",
+            "created": "2023-06-03T09:32:15.676Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "8a013db1-7666-4c66-ac9d-f78ac79a3194",
+            "name": "karyawan",
+            "containerId": "a5fbe4b3-67d8-475b-a2d3-477212994ff1",
+            "created": "2023-06-04T04:49:50.237Z",
+            "sortNum": 25000
+        },
+        {
+            "_id": "67381b6d-19cd-4b01-9692-8a107dcf1daa",
+            "name": "admin",
+            "containerId": "a5fbe4b3-67d8-475b-a2d3-477212994ff1",
+            "created": "2023-06-03T09:32:15.680Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "aed74fe4-69c6-4031-b025-254856073ed7",
+            "name": "admin",
+            "containerId": "",
+            "created": "2023-06-04T04:44:18.681Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "5b7dd2fa-21b6-4e71-a89e-de4556e59b07",
+            "name": "customer",
+            "containerId": "a5fbe4b3-67d8-475b-a2d3-477212994ff1",
+            "created": "2023-06-07T12:20:12.014Z",
+            "sortNum": 75000
+        },
+        {
+            "_id": "aea5c3fa-45b0-4675-9c33-a3a58be22de5",
+            "name": "price-list",
+            "containerId": "aed74fe4-69c6-4031-b025-254856073ed7",
+            "created": "2023-06-04T04:44:34.694Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "93082138-e611-43aa-a2ca-6ca0851ec910",
+            "name": "karyawan",
+            "containerId": "",
+            "created": "2023-06-04T08:05:38.605Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "49fe5e0a-6d6e-4bd4-ac38-c7e4f4f20b02",
+            "name": "customer",
+            "containerId": "",
+            "created": "2023-06-04T08:05:42.611Z",
+            "sortNum": 100000
+        },
+        {
+            "_id": "2eea60a6-4754-4b08-97e0-e601f1af5a36",
+            "name": "customer",
+            "containerId": "aed74fe4-69c6-4031-b025-254856073ed7",
+            "created": "2023-06-05T08:15:44.201Z",
+            "sortNum": 110000
+        },
+        {
+            "_id": "079a72a5-756e-4e96-96fd-e4ed0820ca0f",
+            "name": "transaksi",
+            "containerId": "49fe5e0a-6d6e-4bd4-ac38-c7e4f4f20b02",
+            "created": "2023-06-07T12:18:42.287Z",
+            "sortNum": 120000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "10adcf19-6235-4896-8796-bc8ec4f8b78c",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "67381b6d-19cd-4b01-9692-8a107dcf1daa",
+            "name": "sign in",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-03T09:32:15.681Z",
+            "modified": "2023-06-07T12:44:40.122Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "admin@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12341234"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "f5382b34-3bc5-4bab-b444-28bbe62f9adc",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "8a013db1-7666-4c66-ac9d-f78ac79a3194",
+            "name": "sign in",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-04T04:49:50.237Z",
+            "modified": "2023-06-07T12:46:28.274Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "karyawan@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12341234"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ce71f985-d8cc-4330-bded-7f04906e2608",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "5b7dd2fa-21b6-4e71-a89e-de4556e59b07",
+            "name": "sign in",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-07T12:20:12.014Z",
+            "modified": "2023-06-07T12:20:53.534Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "customer@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12341234"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "99062cde-3433-4b1e-a42a-42f3d663a669",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "67381b6d-19cd-4b01-9692-8a107dcf1daa",
+            "name": "sign up",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-06-03T09:32:15.677Z",
+            "modified": "2023-06-07T12:57:23.707Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "namaLengkap",
+                        "value": "admin"
+                    },
+                    {
+                        "name": "email",
+                        "value": "admin@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12341234"
+                    },
+                    {
+                        "name": "roles[]",
+                        "value": "ADMIN"
+                    },
+                    {
+                        "name": "roles[]",
+                        "value": "KARYAWAN",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "1eb56c80-b597-47ad-a684-78a20cbbe5a0",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "8a013db1-7666-4c66-ac9d-f78ac79a3194",
+            "name": "sign up",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-06-05T21:45:11.826Z",
+            "modified": "2023-06-07T12:44:10.240Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "namaLengkap",
+                        "value": "karyawan"
+                    },
+                    {
+                        "name": "email",
+                        "value": "karyawan@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12341234"
+                    },
+                    {
+                        "name": "roles[]",
+                        "value": "ADMIN",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "roles[]",
+                        "value": "KARYAWAN"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "01524a2f-1f3c-4a65-972c-368f7df0a29c",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "5b7dd2fa-21b6-4e71-a89e-de4556e59b07",
+            "name": "sign up",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-06-07T12:20:12.015Z",
+            "modified": "2023-06-07T12:43:59.444Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "namaLengkap",
+                        "value": "customer"
+                    },
+                    {
+                        "name": "email",
+                        "value": "customer@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12341234"
+                    },
+                    {
+                        "name": "roles[]",
+                        "value": "CUSTOMER"
+                    },
+                    {
+                        "name": "roles[]",
+                        "value": "KARYAWAN",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "8aaa1476-a1c0-4406-8186-613e4ae218e4",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "a5fbe4b3-67d8-475b-a2d3-477212994ff1",
+            "name": "sign in",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-06-03T09:32:15.689Z",
+            "modified": "2023-06-03T10:43:54.360Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "user2@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12341234"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "83d9eef3-998e-4e83-834d-1e489b53b7d2",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "aea5c3fa-45b0-4675-9c33-a3a58be22de5",
+            "name": "index",
+            "url": "http://localhost:3000/api/admin/price-list",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2023-06-04T04:44:41.077Z",
+            "modified": "2023-06-07T13:36:13.129Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk1NmFiMThjLTlkZDYtNGNhNS1hOGIxLTBlYjUxZDVkNzY1NiIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2ODYxNDQwNjAsImV4cCI6MTY4NjIzMDQ2MH0.wJ2aJGaHdXl7uBcECfhHnJSwXKIIB42uMjfVmx9VrHE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8dd0135c-638d-4e38-82db-51e0afe673af",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "aea5c3fa-45b0-4675-9c33-a3a58be22de5",
+            "name": "add",
+            "url": "http://localhost:3000/api/admin/price-list",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2023-06-04T07:42:41.474Z",
+            "modified": "2023-06-04T07:47:58.317Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzMmExZWJkLWVmY2ItNDhhNi1hNjg1LTAzYjRjY2I1NmY1OCIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6InVzZXIyIiwiZW1haWwiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE2ODU4NTQ0ODEsImV4cCI6MTY4NTk0MDg4MX0._-a07J46lKmlLmQJGLN7An3imi2FlxJlCvoHWoV-5qs"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "namaPaket",
+                        "value": "ANTAR SAMPAI RUMAH"
+                    },
+                    {
+                        "name": "beratGram",
+                        "value": "1000",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "beratKiloGram",
+                        "value": "1",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "harga",
+                        "value": "10000"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "77da355b-617e-43e1-8415-01daae6f6c49",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "aea5c3fa-45b0-4675-9c33-a3a58be22de5",
+            "name": "update",
+            "url": "http://localhost:3000/api/admin/price-list/1911fb89-ec51-46d5-99f5-8de56d205d50",
+            "method": "PUT",
+            "sortNum": 150000,
+            "created": "2023-06-04T07:49:49.532Z",
+            "modified": "2023-06-04T10:00:36.235Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzMmExZWJkLWVmY2ItNDhhNi1hNjg1LTAzYjRjY2I1NmY1OCIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6InVzZXIyIiwiZW1haWwiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE2ODU4NTQ0ODEsImV4cCI6MTY4NTk0MDg4MX0._-a07J46lKmlLmQJGLN7An3imi2FlxJlCvoHWoV-5qs"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "namaPaket",
+                        "value": "LAUNDRY"
+                    },
+                    {
+                        "name": "beratGram",
+                        "value": "1000",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "beratKiloGram",
+                        "value": "1",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "harga",
+                        "value": "10000"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "7f526b62-86bc-4dcf-b58d-f620dead8d8e",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "aea5c3fa-45b0-4675-9c33-a3a58be22de5",
+            "name": "show",
+            "url": "http://localhost:3000/api/admin/price-list/1911fb89-ec51-46d5-99f5-8de56d205d50",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2023-06-04T08:08:01.862Z",
+            "modified": "2023-06-04T10:02:07.425Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzMmExZWJkLWVmY2ItNDhhNi1hNjg1LTAzYjRjY2I1NmY1OCIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6InVzZXIyIiwiZW1haWwiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE2ODU4NTQ0ODEsImV4cCI6MTY4NTk0MDg4MX0._-a07J46lKmlLmQJGLN7An3imi2FlxJlCvoHWoV-5qs"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8911f085-5510-4b96-a02e-9829bf5ba65d",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "aea5c3fa-45b0-4675-9c33-a3a58be22de5",
+            "name": "delete",
+            "url": "http://localhost:3000/api/admin/price-list/304201bd-0586-4dee-8ae7-e60afd4a1239",
+            "method": "DELETE",
+            "sortNum": 160000,
+            "created": "2023-06-04T08:03:19.375Z",
+            "modified": "2023-06-04T09:54:14.494Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMzMmExZWJkLWVmY2ItNDhhNi1hNjg1LTAzYjRjY2I1NmY1OCIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6InVzZXIyIiwiZW1haWwiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE2ODU4NTQ0ODEsImV4cCI6MTY4NTk0MDg4MX0._-a07J46lKmlLmQJGLN7An3imi2FlxJlCvoHWoV-5qs"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3d8f99c1-c550-4d57-abf5-c2ec1a1dfc32",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "2eea60a6-4754-4b08-97e0-e601f1af5a36",
+            "name": "add only customer",
+            "url": "http://localhost:3000/api/admin/customer",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2023-06-05T08:15:47.934Z",
+            "modified": "2023-06-07T12:08:55.302Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwNGFkYjUyLTgxYjctNDRkZi04MjhhLWIwNDQ1NTk0OGQ2MCIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6InVzZXIzIiwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJpYXQiOjE2ODYxMzk3MjAsImV4cCI6MTY4NjIyNjEyMH0.UB4EPdLnUYZfUd5tnHdE8YPPP6pvgMD9W3vGABfO7Mo"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "namaLengkap",
+                        "value": "REZA KHOIRUL WP"
+                    },
+                    {
+                        "name": "alamat",
+                        "value": "Karawang"
+                    },
+                    {
+                        "name": "noTelp",
+                        "value": "0921039122"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "9cd58e49-9f1d-4260-9ad6-3f30b1f48dae",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "2eea60a6-4754-4b08-97e0-e601f1af5a36",
+            "name": "add customer with register",
+            "url": "http://localhost:3000/api/admin/customer/with-register",
+            "method": "POST",
+            "sortNum": 180000,
+            "created": "2023-06-05T08:46:15.730Z",
+            "modified": "2023-06-05T13:39:16.348Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjczNmJlMDgzLWJlOTYtNDZkMy1iNDhkLTk4MTkzMWZkYWUwNCIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6InVzZXIyIiwiZW1haWwiOiJ1c2VyM0BnbWFpbC5jb20iLCJpYXQiOjE2ODU5NzIzMDYsImV4cCI6MTY4NjA1ODcwNn0.s7yaXxBrz9U7qKuU8cvl0amn4x0fH1e9SKUVUgzP-xg"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "alamat",
+                        "value": "Karawang"
+                    },
+                    {
+                        "name": "noTelp",
+                        "value": "0921039122"
+                    },
+                    {
+                        "name": "namaLengkap",
+                        "value": "Reza"
+                    },
+                    {
+                        "name": "email",
+                        "value": "customer@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12341234"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "17919ac1-0c22-4852-b715-0230f49f302a",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "079a72a5-756e-4e96-96fd-e4ed0820ca0f",
+            "name": "add",
+            "url": "http://localhost:3000/api/customer/transaksi",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2023-06-07T12:18:46.860Z",
+            "modified": "2023-06-07T13:46:10.552Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUyNmU1Yjg3LTE5YTUtNDc5ZS04OTkxLTJiNDA2ZTM5MmM4MCIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6ImN1c3RvbWVyIiwiZW1haWwiOiJjdXN0b21lckBnbWFpbC5jb20iLCJpYXQiOjE2ODYxNDQwNTYsImV4cCI6MTY4NjIzMDQ1Nn0.5cR9ulcicY7y3CFMNkMUuMPAckg1BfWMrG9tYpOFkE0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"detailTransaksi\" : [\n    {\n      \"orderId\": \"fdade816-8727-41f6-a295-239b4e4d2f5a\",\n      \"qty\": 3\n    },\n    {\n      \"orderId\": \"b2a6e7ef-80f3-47f0-a156-42a3e34ed333\",\n      \"qty\": 1\n    }\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "92be5cb2-8bac-4e5a-85e9-ea8136f3811b",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "079a72a5-756e-4e96-96fd-e4ed0820ca0f",
+            "name": "update",
+            "url": "http://localhost:3000/api/customer/transaksi/4c6d2895-c880-4a35-8d5c-11c74b1bd321",
+            "method": "PUT",
+            "sortNum": 210000,
+            "created": "2023-06-07T13:56:39.173Z",
+            "modified": "2023-06-07T14:49:39.392Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUyNmU1Yjg3LTE5YTUtNDc5ZS04OTkxLTJiNDA2ZTM5MmM4MCIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6ImN1c3RvbWVyIiwiZW1haWwiOiJjdXN0b21lckBnbWFpbC5jb20iLCJpYXQiOjE2ODYxNDQwNTYsImV4cCI6MTY4NjIzMDQ1Nn0.5cR9ulcicY7y3CFMNkMUuMPAckg1BfWMrG9tYpOFkE0"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"keterangan\":\"sesuaikan key detailTransaksi id && key keterangan ini tidak akan dibawa ke controller\",\n  \"detailTransaksi\" : [\n    {\n      \"id\": \"b61149cc-f2b8-4732-bb19-ae2a1afc841b\",\n      \"orderId\": \"fdade816-8727-41f6-a295-239b4e4d2f5a\",\n      \"qty\": 12\n    }\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c244f3b0-ed7e-4400-84f8-92626f9c7466",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "079a72a5-756e-4e96-96fd-e4ed0820ca0f",
+            "name": "index || get all",
+            "url": "http://localhost:3000/api/customer/transaksi",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2023-06-07T14:55:23.474Z",
+            "modified": "2023-06-07T15:24:32.306Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUyNmU1Yjg3LTE5YTUtNDc5ZS04OTkxLTJiNDA2ZTM5MmM4MCIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6ImN1c3RvbWVyIiwiZW1haWwiOiJjdXN0b21lckBnbWFpbC5jb20iLCJpYXQiOjE2ODYxNTE0NTcsImV4cCI6MTY4NjIzNzg1N30.Jlm8FdOxGGH4IsKN8O0F7JWeTR-aVqml3uGOkHLIrt0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "67013926-a4b4-4d12-92a9-114e0739c4f1",
+            "colId": "e956db7b-cb3a-4b83-9f0f-2545c206e599",
+            "containerId": "079a72a5-756e-4e96-96fd-e4ed0820ca0f",
+            "name": "show",
+            "url": "http://localhost:3000/api/customer/transaksi/4c6d2895-c880-4a35-8d5c-11c74b1bd321",
+            "method": "GET",
+            "sortNum": 220000,
+            "created": "2023-06-07T15:25:35.266Z",
+            "modified": "2023-06-07T15:52:59.157Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUyNmU1Yjg3LTE5YTUtNDc5ZS04OTkxLTJiNDA2ZTM5MmM4MCIsInVzZXJuYW1lIjpudWxsLCJuYW1hTGVuZ2thcCI6ImN1c3RvbWVyIiwiZW1haWwiOiJjdXN0b21lckBnbWFpbC5jb20iLCJpYXQiOjE2ODYxNDQwNTYsImV4cCI6MTY4NjIzMDQ1Nn0.5cR9ulcicY7y3CFMNkMUuMPAckg1BfWMrG9tYpOFkE0"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

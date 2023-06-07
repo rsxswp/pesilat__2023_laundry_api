@@ -1,9 +1,4 @@
-// const { response, crud, register } = require("../../helpers");
 const { response, register, crud } = require("../../helpers");
-console.log(">>> response = ", response);
-const authController = require("../auth.controller");
-const db = require("./../../models");
-console.log(">>> db = ", db.sequelize.transaction);
 const { Customer, User, Role, sequelize } = require("./../../models");
 class CustomerController {
   async storeOnlyCustomer(req, res) {
@@ -15,7 +10,7 @@ class CustomerController {
         model: Customer,
         requestBody: body,
         validateSchema: {
-          name: {
+          namaLengkap: {
             type: "string",
           },
           alamat: {

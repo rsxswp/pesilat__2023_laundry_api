@@ -1,8 +1,39 @@
-const { sequelize } = require("../models");
-const { response } = require("./response.helper");
+const { response, responseObject } = require("./response.helper");
 const validator = require("./validator.helper");
 
 module.exports = {
+  createReturnObject: async (
+    req,
+    res,
+    { model, requestBody, validateSchema }
+  ) => {
+    try {
+      const body = requestBody;
+
+      const validasi = validator(body, validateSchema);
+
+      if (validasi.gagal()) {
+        return responseObject(res, 422, {
+          errors: validasi.erorrMessages(),
+          message: "validation failed",
+        });
+      }
+
+      const insertData = await model.create(body);
+
+      if (insertData) {
+        return responseObject(res, 201, {
+          message: "success add",
+          data: insertData,
+        });
+      } else {
+        return responseObject(res, 500, { errors: "insert failed" });
+      }
+    } catch (e) {
+      console.log(">>> err di curd (createReturnJson) = ", e);
+      throw e;
+    }
+  },
   create: async (req, res, { model, requestBody, validateSchema }) => {
     try {
       const body = requestBody;

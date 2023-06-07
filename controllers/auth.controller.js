@@ -6,7 +6,9 @@ const bcrypt = require("bcryptjs");
 class AuthController {
   async register(req, res) {
     try {
-      const dataRegister = await register(req, res, req.roles, {
+      // return res.send("regis method");
+      // console.log(">>> ROLES CONTROLLER = ", req.body.roles);
+      const dataRegister = await register(req, res, req.body.roles, {
         model: [User, Role],
       });
 
