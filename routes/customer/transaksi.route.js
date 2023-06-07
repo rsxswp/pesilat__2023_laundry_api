@@ -28,5 +28,11 @@ module.exports = (app, { argumenRouter }) => {
     customerController.transaksi().show
   );
 
+  app.delete(
+    "/:id",
+    [loginMiddleware.isTrue, loginMiddleware.isCustomer],
+    customerController.transaksi().destroy
+  );
+
   return app;
 };

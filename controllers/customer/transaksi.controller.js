@@ -180,6 +180,32 @@ class TransaksiController {
 
   async destroy(req, res) {
     try {
+      // return res.send("destroy tra");
+      const findTra = await Transaksi.findByPk(req.params.id);
+      if (!findTra) {
+        return response(res, 404, {
+          message: "data not found",
+          errors: "data not found",
+        });
+      }
+
+      if (findTra.status !== "dalam_antrian") {
+        return response(res, 400, {
+          errors: "fail to update when status not dalam_antrian",
+        });
+      }
+
+      const hapusTra = await findTra.destroy();
+      if (hapusTra) {
+        return response(res, 200, { message: "success delete data" });
+      } else {
+        return response(res, 500, {
+          errors: "500 internal server error",
+          message: "fail delete data",
+        });
+      }
+
+      // return await crud.delete(req, res, { model: Transaksi });
     } catch (e) {
       return response(res, 500, {
         errors: e,
@@ -187,6 +213,7 @@ class TransaksiController {
       });
     }
   }
+
   async index(req, res) {
     try {
       return await crud.readAll(req, res, {
