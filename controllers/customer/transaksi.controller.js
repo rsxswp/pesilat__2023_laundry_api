@@ -1,5 +1,10 @@
 const { Op } = require("sequelize");
-const { response, register, crud } = require("../../helpers");
+const {
+  response,
+  register,
+  crud,
+  dataModelToObject,
+} = require("../../helpers");
 const { Transaksi, DetailTransaksi, PriceList } = require("./../../models");
 class TransaksiController {
   async store(req, res) {
@@ -253,7 +258,7 @@ class TransaksiController {
 
       // mengubah menjadi object biasa
 
-      const findTra = findTraFromDB.map((x) => x.get({ plain: true }))[0]; // merubah menjadi object biasa
+      const findTra = dataModelToObject(findTraFromDB).first();
 
       if (!findTra) {
         return response(res, 404, { errors: "data not found" });

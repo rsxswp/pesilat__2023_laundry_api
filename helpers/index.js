@@ -6,6 +6,7 @@ const { response, responseObject } = require("./response.helper");
 const crud = require("./crud.helper");
 const nextRequest = require("./nextRequest.helper");
 const register = require("./register.helper");
+const dataModelToObject = require("./dataModelToObject.helper");
 
 module.exports = {
   uuidType,
@@ -13,6 +14,7 @@ module.exports = {
   validator,
   response,
   crud,
+  dataModelToObject,
   nextRequest,
   register,
   responseObject,

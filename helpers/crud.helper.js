@@ -153,6 +153,26 @@ module.exports = {
     }
   },
 
+  readAllReturnObject: async (req, res, { model, findQuery = {} }) => {
+    try {
+      const dataModel = await model.findAll(findQuery);
+
+      if (!dataModel) {
+        return responseObject(res, 204, { message: "no content" });
+      }
+
+      return responseObject(res, 200, {
+        message: "success get all data price list",
+        data: dataModel,
+      });
+    } catch (e) {
+      return responseObject(res, 500, {
+        message: "500 internal server error",
+        errors: e,
+      });
+    }
+  },
+
   readOne: async (req, res, { keyParam = "id", model, findQuery = {} }) => {
     try {
       const id = req.params[keyParam];
@@ -168,6 +188,31 @@ module.exports = {
       });
     } catch (e) {
       return response(res, 500, {
+        message: "500 internal server error",
+        errors: e,
+      });
+    }
+  },
+
+  readOneReturnObject: async (
+    req,
+    res,
+    { keyParam = "id", model, findQuery = {} }
+  ) => {
+    try {
+      const id = req.params[keyParam];
+      const dataModel = await model.findByPk(id, findQuery);
+
+      if (!dataModel) {
+        return responseObject(res, 404, { errors: "data not found" });
+      }
+
+      return responseObject(res, 200, {
+        message: "success get data",
+        data: dataModel,
+      });
+    } catch (e) {
+      return responseObject(res, 500, {
         message: "500 internal server error",
         errors: e,
       });

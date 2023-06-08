@@ -13,6 +13,7 @@ module.exports = (app) => {
         isLogin: true,
       },
     });
+  admin.addRoutesApi("/transaksi", require("./admin/transaksi.route"));
   });
 
   addRoutesApi("/customer", null, app).group((customer) => {
