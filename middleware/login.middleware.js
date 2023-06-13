@@ -36,6 +36,7 @@ class LoginMiddleware {
             errors: err,
           });
         }
+        global.userId = decoded.id;
         req.userId = decoded.id;
         // req.transaction = await db.sequelize.transaction();
         req.user = async () => {

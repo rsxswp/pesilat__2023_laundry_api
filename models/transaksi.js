@@ -29,5 +29,39 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "Transaksi",
     }
   );
+
+  Transaksi.afterCreate(async (tra, options) => {
+    await sequelize.models.AuditLog.create({
+      model: __dirname + __filename,
+      tableName: Transaksi.getTableName(),
+      userId: global.userId,
+      query: "INSERT",
+      data: tra.toJSON(),
+      hookName: "afterCreate",
+    });
+  });
+
+  Transaksi.afterDestroy(async (tra, options) => {
+    await sequelize.models.AuditLog.create({
+      model: __dirname + __filename,
+      tableName: Transaksi.getTableName(),
+      userId: global.userId,
+      query: "DELETE",
+      data: tra.toJSON(),
+      hookName: "afterDestroy",
+    });
+  });
+
+  Transaksi.afterUpdate(async (tra, options) => {
+    await sequelize.models.AuditLog.create({
+      model: __dirname + __filename,
+      tableName: Transaksi.getTableName(),
+      userId: global.userId,
+      query: "UPDATE",
+      data: tra.toJSON(),
+      hookName: "afterUpdate",
+    });
+  });
+
   return Transaksi;
 };
